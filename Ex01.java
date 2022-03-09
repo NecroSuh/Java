@@ -1,5 +1,3 @@
-package input;
-
 import java.io.IOException;
 
 public class Ex01 {
