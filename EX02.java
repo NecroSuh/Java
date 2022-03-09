@@ -1,5 +1,3 @@
-package input;
-
 import java.util.Scanner;
 
 //Scanner라는 클래스는 java.util 패키지 안에 있는데
