@@ -26,7 +26,7 @@ public class Ex06_07 {
 
 		Car c2 = new Car("white", "auto", 4);
 
-		System.out.println("c1ÀÇ color=" + c1.color + ", gearType=" + c1.gearType + ", door=" + c1.door);
-		System.out.println("c1ÀÇ color=" + c2.color + ", gearType=" + c2.gearType + ", door=" + c2.door);
+		System.out.println("c1Ã€Ã‡ color=" + c1.color + ", gearType=" + c1.gearType + ", door=" + c1.door);
+		System.out.println("c2Ã€Ã‡ color=" + c2.color + ", gearType=" + c2.gearType + ", door=" + c2.door);
 	}
 }
