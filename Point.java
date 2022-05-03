@@ -1,4 +1,4 @@
-package dotManager;
+package shape;
 
 // 좌표를 정의하는 데이터클래스
 public class Point {
@@ -31,4 +31,13 @@ public class Point {
 		return "Point [x=" + x + ", y=" + y + "]";
 	}
 
+	// 다른 점과의 x축 거리 계산
+	public int distX(Point p) {
+		return Math.abs(x - p.x);
+	}
+
+	// 다른 점과의 y축 거리 계산
+	public int distY(Point p) {
+		return Math.abs(y - p.y);
+	}
 }
