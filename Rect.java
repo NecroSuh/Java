@@ -1,27 +1,36 @@
-package rectClass;
+package shape;
 
-// Data Class
-public class Rect {
-	// 1) Property
-	public int x1, y1, x2, y2;	// public : Visibility(가시성)
-	public int w, h;			// 초기화
-	public int length, size;	// 둘레길이, 면적
-	// 2) Method
-	public void calcSize() {	// 둘레 계산과 면적 계산
-		if(w == 0) {
-			w = Math.abs(x2 - x1);	// Math 클래스는 수학함수 라이브러리 클래스. 정적클래스.
-		}
-		if(h == 0) {
-			h = Math.abs(y2 - y1);
-		}
-		length = (w + h) * 2;
+public class Rect extends Shape implements Comparable {
+	private Point p2;
+
+	public Rect(Point p, Point p2) {
+		super(p);
+		this.p2 = p2;
+	}
+
+	@Override
+	public void draw() {
+		System.out.println("RECT : " + p1 + " - " + p2);
+		System.out.println("		size= " + size);
+
+	}
+
+	@Override
+	public void calc() {
+		// int w = Math.abs(p2.getX()-p1.getX());
+		int w = p1.distX(p2);
+		int h = p1.distY(p2);
 		size = w * h;
 	}
-	public void move(int dx, int dy) {
-		x1 += dx; y1 += dy;
-		x2 += dx; y2 += dy;
-	}
-	public void show() {
-		System.out.println("좌표1 : ("+x1+","+y1+") 둘레 = "+ length +" 면적= "+size);
+
+	@Override
+	public int compareTo(Object o) { // Rect 객체끼리 크기를 비교하는 메소드
+		Rect r = (Rect) o; // Down Casting.
+		if (size < r.size)
+			return -1;
+		else if (size == r.size)
+			return 0;
+		else
+			return 1;
 	}
 }
