@@ -6,18 +6,18 @@ public class Ex04 {
 	public static void main(String[] args) {
 
 		Scanner s = new Scanner(System.in);
-		System.out.print("Á¤¼ö 3°³ ÀÔ·Â>>");
+		System.out.print("ì •ìˆ˜ 3ê°œ ìž…ë ¥>>");
 
 		int a = s.nextInt();
 		int b = s.nextInt();
 		int c = s.nextInt();
 
-		if (a > b && a < c)
-			System.out.println("Áß°£ °ªÀº " + a);
-		else if (b < c)
-			System.out.println("Áß°£ °ªÀº " + b);
+		if ((b < a && a < c) || (c < b && a < b))
+			System.out.println("ì¤‘ê°„ ê°’ì€ " + a);
+		else if ((a < b && b < c) || (a < b && b < c))
+			System.out.println("ì¤‘ê°„ ê°’ì€ " + b);
 		else
-			System.out.println("Áß°£ °ªÀº " + c);
+			System.out.println("ì¤‘ê°„ ê°’ì€ " + c);
 
 		s.close();
 	}
