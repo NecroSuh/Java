@@ -21,7 +21,7 @@ class ColorTv extends Tv {
 	}
 
 	public void printProperty() {
-		System.out.println(super.getSize() + "ì¸ì¹˜ " + Color + "ì»¬ëŸ¬");
+		System.out.println(super.getSize() + "ÀÎÄ¡ " + Color + "ÄÃ·¯");
 	}
 }
 
