@@ -8,7 +8,7 @@ public class GraphicsColorFontEx extends JFrame {
 	private MyPanel panel = new MyPanel();
 
 	public GraphicsColorFontEx() {
-		setTitle("Color, Font »ç¿ë ¿¹Á¦");
+		setTitle("Color, Font ì‚¬ìš© ì˜ˆì œ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setContentPane(panel);
 
@@ -17,7 +17,7 @@ public class GraphicsColorFontEx extends JFrame {
 	}
 
 	class MyPanel extends JPanel {
-		public void paintComopent(Graphics g) {
+		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			g.setColor(Color.BLUE);
 			g.drawString("I Love Java.~~", 30, 30);
