@@ -1,31 +1,31 @@
 package seventh;
 
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
-public class Cow1 {
+public class Cow2 {
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static StringBuilder sb = new StringBuilder();
+	static StringTokenizer st;
+
 	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
 
-		int n = Integer.parseInt(br.readLine());
-		int[][] arr = new int[11][1];
-		int cow_sum = 0;
-
-		for (int i = 1; i < 11; i++)
-			arr[i][0] = -1;
-		StringTokenizer st;
-		for (int i = 0; i < n; i++) {
-			st = new StringTokenizer(br.readLine(), " ");
-			int a = Integer.parseInt(st.nextToken());
-			int b = Integer.parseInt(st.nextToken());
-
-			if (arr[a][0] == -1)
-				arr[a][0] = b;
-			else if (arr[a][0] != b) {
-				cow_sum++;
-				arr[a][0] = b;
-			}
+		int pos1[] = new int[26];
+		int pos2[] = new int[26];
+		int cnt = 0;
+		for (int i = 0; i < 52; i++) {
+			int idx = str.charAt(i) - 'A';
+			if (pos1[idx] == 0)
+				pos1[idx] = i + 1;
+			else
+				pos2[idx] = i + 1;
 		}
-		System.out.println(cow_sum);
+		for (int i = 0; i < 26; i++) {
+			for (int j = 0; j < 26; j++)
+				if (pos1[i] < pos1[j] && pos1[j] < pos2[i] && pos2[i] < pos2[j])
+					cnt++;
+		}
+		System.out.println(cnt);
 	}
 }
